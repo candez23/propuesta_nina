@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi querida Nina ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+            backdrop-filter: blur(10px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .proposal-image {
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 30px;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .buttons button {
+            font-size: 20px;
+            padding: 12px 25px;
+            margin: 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Arial', sans-serif;
+        }
+        #yes-btn {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+        }
+        #no-btn {
+            background: linear-gradient(to right, #333, #555);
+            color: white;
+        }
+        #yes-btn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+        }
+        #no-btn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to right, #555, #777);
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(-45deg);
+            animation: float 4s infinite ease-in-out;
+        }
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart:before { top: -10px; left: 0; }
+        .heart:after { left: 10px; top: 0; }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-100px) rotate(-45deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="poh.gif" alt="gif del bueno" class="proposal-image">
+        <h1>¿Quieres ser mi San Valentín mi amor? ❤️</h1>
+        <div class="buttons">
+            <button id="si-btn">Sí</button>
+            <button id="no-btn">No</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("si-btn").addEventListener("click", function() {
+            window.location.href = "descarga.html";
+        });
+        document.getElementById("no-btn").addEventListener("click", function() {
+            window.location.href = "no.html";
+        });
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = window.innerHeight + "px";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 4000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>

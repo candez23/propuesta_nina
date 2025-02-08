@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se logro!!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+            backdrop-filter: blur(10px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        h1 {
+            font-size: 30px;
+            margin: 20px 0;
+        }
+        .download-btn {
+            font-size: 20px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            transition: 0.4s;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .download-btn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(to right, #ff4b2b, #ff416c);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Gracias amor! 💌</h1>
+        <p>Descarga tu carta ❤️</p>
+        <a href="carta.pdf" download>
+            <button class="download-btn">Descargar Carta 💖</button>
+        </a>
+    </div>
+</body>
+</html>
